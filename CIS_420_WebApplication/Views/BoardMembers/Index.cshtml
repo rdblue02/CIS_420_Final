@@ -1,0 +1,55 @@
+﻿@model IEnumerable<CIS_420_WebApplication.Models.BoardMember>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <div class="nested-section">
+        <h1>Board Members</h1>
+        <h5>This page allows you to manage Board Member Profile information. Click the button below to create a new Board Member Public Profile. To Edit or Delete an existing item simply locate it in the table below and select the action you desire.</h5>
+        <br />
+        <button class="btn btn-success">
+            <a asp-action="Create">Create New</a>
+        </button>
+        <br />
+        <br />
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th class="col-md-3">
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th class="col-md-6">
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th class="col-md-3"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td class="text-right">
+                            <button class="btn btn-primary">
+                                <a asp-action="Edit" asp-route-id="@item.UId">Edit</a>
+                            </button>
+                            <button class="btn btn-info">
+                                <a asp-action="Details" asp-route-id="@item.UId">Details</a>
+                            </button>
+                            <button class="btn btn-danger">
+                                <a asp-action="Delete" asp-route-id="@item.UId">Delete</a>
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

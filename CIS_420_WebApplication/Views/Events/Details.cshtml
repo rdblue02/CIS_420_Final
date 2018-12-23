@@ -1,0 +1,28 @@
+﻿@model CIS_420_WebApplication.Models.Event
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container">
+    <div class="nested-section">
+        <div>
+            <h2>Event</h2>
+            <h1>@Html.DisplayFor(model => model.Name)</h1>
+            <hr />
+                <h3>@Html.DisplayFor(model => model.Date)</h3>
+                <h3>@Html.DisplayFor(model => model.Time)</h3>
+            <br/>
+            
+        </div>
+        <div>
+            <button class="btn btn-primary">
+                <a asp-action="Edit" asp-route-id="@Model.UId">Edit</a>
+            </button>
+            <button class="btn btn-info">
+                <a asp-action="Index">Back to List</a>
+            </button>
+        </div>
+    </div>
+</div>
+

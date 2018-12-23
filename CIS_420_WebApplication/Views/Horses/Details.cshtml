@@ -1,0 +1,29 @@
+﻿@model CIS_420_WebApplication.Models.Horse
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container">
+    <div class="nested-section">
+        <div>
+            <h2>Horse</h2>
+            <h1>@Html.DisplayFor(model => model.Name)</h1>
+            <hr />
+            <h3>@Html.DisplayNameFor(model => model.Description)</h3>
+            <p>@Html.DisplayFor(model => model.Description)</p>
+            <h6 class="label-primary" style="padding: 5px 10px; margin-top: 10px; margin-bottom: 10px; display: inline-block; color: white;">Link</h6>
+            <p>@Html.DisplayFor(model => model.ImageUrl)</p>
+        </div>
+        <br />
+        <div>
+            <button class="btn btn-primary">
+                <a asp-action="Edit" asp-route-id="@Model.UId">Edit</a>
+            </button>
+            <button class="btn btn-info">
+                <a asp-action="Index">Back to List</a>
+            </button>
+        </div>
+    </div>
+</div>
+

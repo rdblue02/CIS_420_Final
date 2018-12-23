@@ -1,0 +1,19 @@
+﻿@model IEnumerable<CIS_420_WebApplication.Models.BoardMember>
+
+@{
+    ViewData["Title"] = "MeetUs";
+}
+
+<div class="section-landing-board">
+    <h1 class="section-title">HoofKY Board of Directors</h1>
+</div>
+<div class="section-wrapper">
+    <div class="section-overlap">
+        @foreach(BoardMember b in Model)
+        {
+            <h4>@b.Name</h4>
+            <p>@b.Description</p>
+            <br/>
+        }
+    </div>
+</div>

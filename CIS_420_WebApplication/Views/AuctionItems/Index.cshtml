@@ -1,0 +1,67 @@
+﻿@model IEnumerable<CIS_420_WebApplication.Models.AuctionItem>
+
+@{
+    ViewData["Title"] = "Silent Auction Management";
+}
+
+<div class="container">
+    <div class="nested-section">
+        <h1>Silent Auction Management</h1>
+        <h5>This page allows you to manage auction items. Click the button below to create a new Auction Item. To Edit or Delete an existing item simply locate it in the table below and select the action you desire.</h5>
+        <br />
+        <button class="btn btn-success">
+            <a asp-action="Create">New Auction Item</a>
+        </button>
+        <br />
+        <br />
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Quantity)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            $ @Html.DisplayFor(modelItem => item.SetPrice)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Quantity)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            <button class="btn btn-primary">
+                                <a asp-action="Edit" asp-route-id="@item.UId">Edit</a>
+                            </button>
+                            <button class="btn btn-info">
+                                <a asp-action="Details" asp-route-id="@item.UId">Details</a>
+                            </button>
+                            <button class="btn btn-danger">
+                                <a asp-action="Delete" asp-route-id="@item.UId">Delete</a>
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

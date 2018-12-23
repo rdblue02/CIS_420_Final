@@ -1,0 +1,72 @@
+﻿@model CIS_420_WebApplication.Models.ApplicationUser
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<div class="container">
+    <div class="nested-section">
+        <div>
+
+            <h1>Delete User?</h1>
+            <div>
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="ApplicationUserId" />
+                    <input type="submit" value="Delete" class="btn btn-danger" />
+                    <button class="btn btn-info">
+                        <a asp-action="Index">Back to List</a>
+                    </button>
+                </form>
+            </div>
+            <hr />
+
+            <h3>User</h3>
+            <h2>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h2>
+            <hr />
+        </div>
+
+    </div>
+</div>
+
+<div class="section-centered">
+    <h2>Are you sure you want to delete this Auction Item?</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ApplicationUserId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserName)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.ApplicationUserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.UserName)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ApplicationUserId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">< Back to List</a>
+    </form>
+</div>

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<CIS_420_WebApplication.Models.Event>
+    @{
+    ViewData["Title"] = "Events";
+    }
+
+    <div class="section-landing-events">
+        <h1 class="section-title">Events</h1>
+    </div>
+    <div class="section-wrapper">
+        <div class="section-overlap">
+            <div class="responsive-row-container">
+                @foreach (Event e in Model)
+                {
+                <div class="responsive-card">
+                    <h4>@e.Name</h4>
+                    <h6 class="label-success" style="padding: 5px 10px;color: white; margin-bottom: 0px;">
+                        @e.Date.ToString("D")
+                    </h6>
+                    <h6 class="label-primary" style="padding: 5px 10px;color: white; margin-top: 0px;">
+                        @e.Time.ToString("t")
+                    </h6>
+                    <br />
+                    <p>@e.Description</p>
+                    <br />
+                    <button class="btn btn-primary"  style="color: #60a3c4;">
+                        @if (!e.Link.Contains("http"))
+                        {<a href="http://@e.Link">@e.LinkTitle</a>}
+                    else
+                    {
+                        <a href="@e.Link">@e.LinkTitle</a>
+                    }
+
+                    </button>
+                </div>
+                }
+
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,50 @@
+﻿@model IEnumerable<CIS_420_WebApplication.Models.Event>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container">
+    <div class="nested-section">
+        <h1>Events</h1>
+        <h5>This page allows you to manage scheduled events. Click the button below to schedule a new event. To Edit or Delete an existing item simply locate it in the table below and select the action you desire.</h5>
+        <br />
+        <button class="btn btn-success">
+            <a asp-action="Create">New Event</a>
+        </button>
+        <br />
+        <br />
+        <div class="responsive-row-container">
+            @foreach (var item in Model)
+            {
+                <div class="responsive-card">
+                    <h4 style="margin-top: 0px; font-weight: 700; color: #60a3c4;">@Html.DisplayFor(modelItem => item.Name)</h4>
+                    <div>
+                        <h6 class="label-success" style="display: inline-block; padding: 5px 10px; margin-right: 5px; color: white;">
+                            @Html.DisplayFor(modelItem => item.Date)
+                        </h6>
+                        <h6 style="display: inline-block;">
+                            @Html.DisplayFor(modelItem => item.Time)
+                        </h6>
+                    </div>
+                    <p>@Html.DisplayFor(modelItem => item.Description)</p>
+                    <br />
+                    <a href="@Html.DisplayFor(modelItem => item.Link)">@Html.DisplayFor(modelItem => item.LinkTitle)</a>
+                    <br />
+                    <br />
+                    <div class="row-wrapper">
+                        <div class="label-primary" style="padding: 5px 10px;">
+                            <a asp-action="Edit" asp-route-id="@item.UId" style="color: white;">Edit</a>
+                        </div>
+                        <div class="label-info" style="padding: 5px 10px;">
+                            <a asp-action="Details" asp-route-id="@item.UId" style="color: white;">Details</a>
+                        </div>
+                        <div class="label-danger" style="padding: 5px 10px;">
+                            <a asp-action="Delete" asp-route-id="@item.UId" style="color: white;">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>

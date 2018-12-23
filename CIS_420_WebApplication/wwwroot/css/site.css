@@ -1,0 +1,425 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+/* Removing Default Styles and Setting them */
+
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Lato', sans-serif;
+}
+
+h1 {
+    font-weight: 700;
+}
+
+/* Makes Button Text White*/
+button > a {
+    color: white;
+}
+
+    button > a:hover {
+        color: white;
+        text-decoration: none;
+    }
+/* 
+    ----------
+    Footer Div 
+    ----------
+    Purpose: Provdide additional information and links to the viewer.
+    Locations Used: Shared Layout View
+*/
+
+.footer-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #60a3c4;
+    flex-direction: column;
+    padding: 30px 0px;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+    .footer-links > a {
+        color: white;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+
+        .footer-links > a:hover {
+            color: #333;
+            text-decoration: none;
+        }
+
+/* 
+    ----------------
+    Responsive Cards 
+    ----------------
+    Purpose: Work as a wrapper for content within the responsive 3x3 grid.
+    Locations Used: Donation Page, Event Page
+*/
+.responsive-card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 25px;
+    -webkit-box-shadow: 10px 10px 26px 0px rgba(150,150,150,.5);
+    -moz-box-shadow: 10px 10px 26px 0px rgba(150,150,150,.5);
+    box-shadow: 10px 10px 26px 0px rgba(150,150,150,.5);
+}
+
+/* Grid Container */
+.responsive-row-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    grid-auto-rows: -1fr;
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+}
+
+@media (max-width: 767px) {
+    .responsive-row-container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-auto-rows: -1fr;
+        grid-column-gap: 25px;
+        grid-row-gap: 25px;
+    }
+}
+
+.section-title {
+    color: white;
+}
+
+/* Gives Bootstrap Container 100vh */
+.container-wrapper {
+    height: auto;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-top: 64px;
+}
+
+/* Starts at top */
+.nested-section-auto {
+    padding-top: 10%;
+    padding-bottom: 10%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    -ms-flex-direction: column;
+}
+
+.small-landing {
+    width: 100%;
+    text-align: center;
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-left {
+    height: auto;
+    min-height: 100vh;
+    padding-top: 80px;
+}
+
+.nested-section-left {
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    -ms-flex-direction: column;
+}
+
+.nested-section {
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    -ms-flex-direction: column;
+    padding-top: 110px;
+}
+
+.section-start {
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    -ms-flex-direction: column;
+    padding: 50px;
+    padding-top: 100px;
+}
+
+/* Centered */
+.section-centered {
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    -ms-flex-direction: column;
+    padding: 50px;
+    padding-top: 80px;
+}
+
+/* Centered w/ smaller Vh (use with overlap and wrapper) */
+.section-landing {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #60a3c4;
+    margin: 0px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.section-landing-home {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+    background-image: url("/photos/girl-horse-picture.PNG");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.3);
+}
+
+/* Events page */
+.section-landing-events {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+    background-image: url("/photos/horse-field.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.3);
+}
+
+/* Donate page */
+.section-landing-donate {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+    background-image: url("/photos/girl-horse-2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.3);
+}
+
+/* Board page */
+.section-landing-board {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+    background-image: url("/photos/boardroom.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.3);
+}
+
+/* Board page */
+.section-landing-about {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+    background-image: url("/photos/group-campers.PNG");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.3);
+}
+
+/* Used with Overlap (NEST OVERLAP INSIDE SECTION-WRAPPER DIV) */
+.section-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -50px;
+}
+
+/* Used with wrapper (NEST THIS INSIDE WRAPPER) */
+.section-overlap {
+    display: flex;
+    width: 80%;
+    height: auto;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 10% 10%;
+    background-color: white;
+    box-shadow: 3px 10px 20px #ddd;
+}
+
+/* Flex Wraps A Section */
+.section-wrapped {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {
+    .section-overlap {
+        display: flex;
+        width: 90%;
+        height: auto;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 10% 10%;
+        background-color: white;
+        box-shadow: 3px 10px 20px #ddd;
+    }
+}
+
+
+/* Form Style ============================================================================================================================================ */
+/* Wraps around the form */
+.form-wrapper {
+    width: 400px;
+    height: auto;
+    padding: 0px;
+    margin: 0px;
+    background-color: white;
+}
+
+/* Inner div of form */
+.form-inner {
+    width: 100%;
+    height: auto;
+    padding: 25px;
+}
+
+/* Contains each row of the form */
+.form-group {
+    width: 100%;
+}
+
+/* If you want a form on the left */
+.left-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* For holding divs in a straight row */
+.row-wrapper {
+    width: auto;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* Donation Page ============================================================================================================================== */
+.donation-wrapper {
+    width: auto;
+    display: grid;
+    grid-template-columns: 33.33% 33.33% auto;
+    grid-auto-rows: 1fr;
+}
+
+.donation-option {
+    width: 225px;
+    height: auto;
+    padding: 40px 10px;
+    border: solid;
+    border-color: #60a3c4;
+    border-width: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 25px;
+}
+
+/* Admin Page */
+
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}

@@ -1,0 +1,35 @@
+﻿@model CIS_420_WebApplication.Models.AuctionItem
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="container">
+    <div class="nested-section">
+        <div>
+
+            <h1>Delete Auction Item?</h1>
+            <div>
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="UId" />
+                    <input type="submit" value="Delete" class="btn btn-danger" />
+                    <button class="btn btn-info">
+                        <a asp-action="Index">Back to List</a>
+                    </button>
+                </form>
+            </div>
+            <hr />
+
+            <h2>Auction Item</h2>
+            <h1>@Html.DisplayFor(model => model.Name)</h1>
+            <div style="display: flex; flex-direction: row;">
+                <span class="label label-default" style="margin-right: 5px; font-size: 13px">Qty: @Html.DisplayFor(model => model.Quantity)</span>
+                <span class="label label-success" style="font-size: 13px">Price: $@Html.DisplayFor(model => model.SetPrice)</span>
+            </div>
+            <hr />
+            <h3>@Html.DisplayNameFor(model => model.Description)</h3>
+            <p>@Html.DisplayFor(model => model.Description)</p>
+        </div>
+
+    </div>
+</div>

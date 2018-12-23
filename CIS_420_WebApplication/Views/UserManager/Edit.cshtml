@@ -1,0 +1,43 @@
+﻿@model CIS_420_WebApplication.Models.ApplicationUser
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="section-centered">
+    <div class="form-wrapper">
+        <div class="form-inner">
+            <h2>Edit Item</h2>
+            <hr />
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="ApplicationUserId" />
+                <div class="form-group">
+                    <label asp-for="FirstName" class="control-label"></label>
+                    <input asp-for="FirstName" class="form-control" placeholder="@Model.FirstName" disabled />
+                </div>
+                <div class="form-group">
+                    <label asp-for="LastName" class="control-label"></label>
+                    <input asp-for="LastName" class="form-control" placeholder="@Model.LastName" disabled />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Access" class="control-label"></label>
+                    <div>
+                        <select asp-for="Access" asp-items="Html.GetEnumSelectList<ApplicationUser.Permissions>()" class="form-control">
+                            <option selected="selected" value="">User Permissions</option>
+                        </select>
+                        <span asp-validation-for="Access" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-success" />
+                    <button class="btn btn-info">
+                        <a asp-action="Index">Back to List</a>
+                    </button>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,53 @@
+﻿@model CIS_420_WebApplication.Models.Event
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="section-centered">
+    <div class="form-wrapper">
+        <div class="form-inner">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="UId" />
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Date" class="control-label"></label>
+                    <input asp-for="Date" class="form-control" />
+                    <span asp-validation-for="Date" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Time" class="control-label"></label>
+                    <input asp-for="Time" class="form-control" />
+                    <span asp-validation-for="Time" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label"></label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LinkTitle" class="control-label"></label>
+                    <input asp-for="LinkTitle" class="form-control" />
+                    <span asp-validation-for="LinkTitle" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Link" class="control-label"></label>
+                    <input asp-for="Link" class="form-control" />
+                    <span asp-validation-for="Link" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-success" />
+                    <button class="btn btn-info">
+                        <a asp-action="Index">Back to List</a>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

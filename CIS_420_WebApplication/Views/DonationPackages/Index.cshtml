@@ -1,0 +1,55 @@
+﻿@model IEnumerable<CIS_420_WebApplication.Models.DonationPackage>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <div class="nested-section">
+        <h1>Donation Packages</h1>
+        <h5>Manage the packages that let donors know what they're money is doing for the organization.</h5>
+        <br />
+        <button class="btn btn-success">
+            <a asp-action="Create">Create New</a>
+        </button>
+        <br />
+        <br />
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">@Html.DisplayNameFor(model => model.PackageName)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Amount)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Description)</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PackageName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Amount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td class="text-right">
+                            <button class="btn btn-primary">
+                                <a asp-action="Edit" asp-route-id="@item.UId">Edit</a>
+                            </button>
+                            <button class="btn btn-info">
+                                <a asp-action="Details" asp-route-id="@item.UId">Details</a>
+                            </button>
+                            <button class="btn btn-danger">
+                                <a asp-action="Delete" asp-route-id="@item.UId">Delete</a>
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+﻿@model CIS_420_WebApplication.Models.BoardMember
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="container">
+    <div class="nested-section">
+        <div>
+            <h1>Delete Board Member?</h1>
+            <div>
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="UId" />
+                    <input type="submit" value="Delete" class="btn btn-danger" />
+                    <button class="btn btn-info">
+                        <a asp-action="Index">Back to List</a>
+                    </button>
+                </form>
+            </div>
+            <hr />
+
+            <h3>Board Member</h3>
+            <h2>@Html.DisplayFor(model => model.Name)</h2>
+            <hr />
+            <h3>@Html.DisplayNameFor(model => model.Description)</h3>
+            <p>@Html.DisplayFor(model => model.Description)</p>
+        </div>
+        
+    </div>
+</div>

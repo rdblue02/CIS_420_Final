@@ -1,0 +1,45 @@
+﻿@model IEnumerable<CIS_420_WebApplication.Models.DonationPackage>
+@{
+    ViewData["Title"] = "Donate";
+}
+
+<div class="section-landing-donate">
+    <h1 class="section-title">Donate</h1>
+</div>
+<div class="section-wrapper">
+    <div class="section-overlap">
+        <p style="text-align: center; font-size: 16px; margin-bottom: 50px;">
+            The HOOF KY vision relies on the generosity of donors to make our mission a reality for at-risk youth.  Your donation, whatever the amount, will positively impact the life of a child.
+            <br />
+            <br />
+            The options below show how much of an impact your donations can make. Feel free to choose one or use the donation button below for a custom donation amount.
+            <br />
+            <br />
+            <button class="btn btn-success">
+                <a href="https://www.paypal.com/fundraiser/hub">Donate</a>
+            </button>
+        </p>
+
+        <br/>
+        <hr/>
+
+        <div class="responsive-row-container">
+            @foreach (DonationPackage d in Model)
+            {
+            <div class="responsive-card">
+                <div style="display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start;">
+                    <h5 style="margin-top: 0px; font-weight: 700;">@d.PackageName</h5>
+                    <h6 class="label-primary" style="padding: 5px 10px; color: white; margin-top: 0px; font-weight: 700;">$@d.Amount</h6>
+                    <p style="font-size: 16px;">@d.Description</p>
+                </div>
+                <br />
+                <br />
+                <button class="btn btn-success">
+                    <a href="https://www.paypal.com/fundraiser/hub">Donate</a>
+                </button>
+            </div>
+            }
+
+        </div>
+    </div>
+</div>
